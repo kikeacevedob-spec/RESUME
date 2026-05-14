@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Professional Profile</title>
+
+<style>
+body{
+  margin:0;
+  font-family:'Segoe UI',sans-serif;
+  color:white;
+
+ 
+  background:
+  radial-gradient(circle at top left, rgba(59,130,246,0.18), transparent 25%),
+  radial-gradient(circle at bottom right, rgba(34,197,94,0.15), transparent 25%),
+  radial-gradient(circle at center, rgba(168,85,247,0.10), transparent 30%),
+  linear-gradient(135deg,#020617,#0f172a,#111827);
+}
+
+
+.header{
+  text-align:center;
+  padding:100px 20px;
+
+  background:linear-gradient(90deg,#0ea5e9,#6366f1);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+
+  font-size:2.8rem;
+
+  letter-spacing:2px;
+  text-shadow:0 0 25px rgba(56,189,248,0.35);
+
+  animation:fadeDown 1s ease forwards;
+}
+
+
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:20px;
+}
+
+
+.card{
+  position:relative;
+  overflow:hidden;
+  background:rgba(30,41,59,0.7);
+  backdrop-filter:blur(10px);
+
+  padding:25px;
+  border-radius:15px;
+  margin:20px 0;
+
+  border:1px solid rgba(255,255,255,0.1);
+
+  transform:translateY(40px);
+  opacity:0;
+
+  animation:fadeUp 1s ease forwards;
+}
+
+
+
+
+.card:nth-child(1){animation-delay:.2s;}
+.card:nth-child(2){animation-delay:.4s;}
+.card:nth-child(3){animation-delay:.6s;}
+.card:nth-child(4){animation-delay:.8s;}
+
+
+.card h2{
+  color:#38bdf8;
+  margin-bottom:10px;
+}
+
+
+.card p, .card li{
+  color:#cbd5f5;
+  line-height:1.6;
+}
+
+
+ul{
+  padding-left:20px;
+}
+
+
+.back{
+  display:inline-block;
+  margin-top:20px;
+  color:#38bdf8;
+  text-decoration:none;
+}
+
+.back:hover{
+  text-decoration:underline;
+}
+
+
+@keyframes fadeUp{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes fadeDown{
+  from{
+    opacity:0;
+    transform:translateY(-30px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+
+.card:hover{
+  transform:translateY(-5px) scale(1.01);
+  box-shadow:0 20px 40px rgba(56,189,248,0.2);
+  transition:.3s;
+  
+.card::before{
+  content:'';
+
+  position:absolute;
+  top:-100%;
+  left:-100%;
+
+  width:200%;
+  height:200%;
+
+  background:linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.04),
+    transparent
+  );
+
+  transform:rotate(25deg);
+
+  transition:.8s;
+}
+
+.card:hover::before{
+  top:100%;
+  left:100%;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<h1 class="header">Professional Profile</h1>
+
+<div class="container">
+
+<div class="card">
+<h2>About Me</h2>
+<ul>
+<li>
+I'm Enrique Acevedo Bustamante, an international Software Engineering student at Delgado Community College.
+</li><br>
+<li>
+I combine technical skills with discipline, curiosity, and a strong competitive mindset shaped by sports like tennis.
+</li><br>
+
+<li>
+I’m driven to learn, improve, and solve real-world problems. I challenge myself daily, think creatively, and approach obstacles with persistence until I find a solution.
+</li><br>
+
+<li>
+I’m a social, adaptable, and loyal person who values teamwork and long-term commitment. I bring energy, focus, and a positive attitude to every team I join.
+</li>
+</div>
+
+<div class="card">
+  <h2>Knowledge</h2>
+  <ul>
+  <li>Frontend: HTML, CSS, JavaScript</li><br>
+  <li>Backend: APIs, SQL, PHP</li><br>
+  <li>Mobile: Android Studio (Kotlin)</li><br>
+  <li>AI Development & AI Tools</li><br>
+  <li>Python</li><br>
+  <li>Data Analysis (basic)</li><br>
+  <li>RGB & 3D Machines (basic)</li>
+  </ul>
+  <br>
+  <p>I’m constantly learning and improving in all these areas, well im not an expert i can say with confidence that i learned with ease.</p>
+</div>
+
+<div class="card">
+<h2>Skills</h2>
+<ul>
+<li>Loyal, dependable, and committed to long-term growth within a company.</li>
+<br>
+<li>I will always try to improve myself that can be on my Knowledge or in my improvement in the company and in myself.</li>
+<br>
+<li>Dedicated problem-solver who remains focused until challenges are resolved.</li>
+<br>
+<li>One thing about me is that i will always try to help people i believe to be a teamplayer and if you need me to be i can be a leader.</li>
+<br>
+<li>Creative thinker who enjoys building innovative and efficient solutions.</li>
+<br>
+<li>Positive and calm under pressure, even in demanding or high-stress situations.</li>
+<br>
+<li>I will always try to think outside the box but following the rules at the same time</li>
+<br>
+<li>Motivated by difficult challenges and constantly seeking solutions to complex problems.</li>
+<br>
+<li>I will love to handle several projects or to prove myself worhty of being an asset to the company</li>
+<br>
+</ul>
+
+<p>This are just some parts of myself that i can bring to the team and to the company and believe me when i say i am up to the challenge and i will always try to show you why im here and i will try to be the best on the company.</p>
+</div>
+
+<div class="card">
+<h2>Experience</h2>
+<ul>
+<li>Building TennVolt (App Store & Google Play)</li>
+<br>
+<li>API integration & backend systems</li>
+<br>
+<li>Android app development</li>
+<br>
+<li>Sales & database management</li>
+<br>
+<li>Data analysis with real-world data</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>Mindset</h2>
+<ul>
+<li>
+Fast learner, highly motivated, and always ready to improve. Willing to relocate, take on challenges, and grow inside a company.
+</li><br>
+<li>
+Focused on becoming a valuable long-term asset and someone teams can trust with important responsibilities.
+</li><br>
+<li>
+Someone that will never give up no matter what, and will always try to find a way to be better and to help the company be unbeatable.
+</li><br>
+<li>
+I am here to help in any way i can, and i am here to be the best and show you that i an capable and wothy for the opportunity.
+</li>
+</div>
+
+<a href="index.html" class="back">← Back</a>
+
+</div>
+
+</body>
+</html>

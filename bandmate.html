@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BandMate</title>
+
+<style>
+
+
+body{
+  margin:0;
+  font-family:'Segoe UI',sans-serif;
+  color:white;
+
+  background:
+  radial-gradient(circle at top left,
+  rgba(59,130,246,.18),
+  transparent 30%),
+
+  radial-gradient(circle at bottom right,
+  rgba(251,191,36,.16),
+  transparent 30%),
+
+  radial-gradient(circle at center,
+  rgba(168,85,247,.12),
+  transparent 40%),
+
+  linear-gradient(
+  135deg,
+  #020617,
+  #111827,
+  #1e1b4b
+  );
+
+  background-size:400% 400%;
+
+  animation:bgMove 18s ease infinite;
+}
+
+
+@keyframes bgMove{
+
+  0%{
+    background-position:0% 50%;
+  }
+
+  50%{
+    background-position:100% 50%;
+  }
+
+  100%{
+    background-position:0% 50%;
+  }
+
+}
+
+
+
+.header{
+  text-align:center;
+
+  padding:120px 20px 70px;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+
+.logo{
+  width:250px;
+
+  margin-bottom:40px;
+
+  filter:
+  drop-shadow(0 0 25px rgba(168,85,247,.35))
+  drop-shadow(0 0 45px rgba(251,191,36,.20));
+
+  animation:floatLogo 4s ease-in-out infinite;
+}
+
+
+@keyframes floatLogo{
+
+  0%{
+    transform:translateY(0px);
+  }
+
+  50%{
+    transform:translateY(-10px);
+  }
+
+  100%{
+    transform:translateY(0px);
+  }
+
+}
+
+.header h1{
+
+  font-size:5.5rem;
+  font-weight:900;
+
+  margin:0 0 30px;
+
+  letter-spacing:2px;
+
+  background:linear-gradient(
+  90deg,
+  #022857,
+  #c084fc,
+  #fbbf24,
+  #60a5fa
+  );
+
+  background-size:300% auto;
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+
+  animation:titleGlow 6s linear infinite;
+
+  text-shadow:
+  0 0 25px rgba(192,132,252,.15);
+}
+
+
+@keyframes titleGlow{
+
+  0%{
+    background-position:0%;
+  }
+
+  100%{
+    background-position:300%;
+  }
+
+}
+
+
+.subtitle{
+
+  max-width:760px;
+
+  padding:22px 30px;
+
+  font-size:1.05rem;
+  line-height:1.8;
+
+  color:#e9d5ff;
+
+  text-align:center;
+
+  background:
+  linear-gradient(
+  135deg,
+  rgba(255,255,255,.06),
+  rgba(255,255,255,.03)
+  );
+
+  border:
+  1px solid rgba(255,255,255,.08);
+
+  border-radius:22px;
+
+  backdrop-filter:blur(14px);
+
+  box-shadow:
+  0 15px 45px rgba(0,0,0,.35);
+
+  transition:.4s;
+
+  position:relative;
+
+  overflow:hidden;
+}
+
+
+.subtitle::before{
+
+  content:'';
+
+  position:absolute;
+
+  top:0;
+  left:-100%;
+
+  width:100%;
+  height:100%;
+
+  background:
+  linear-gradient(
+  90deg,
+  transparent,
+  rgba(255,255,255,.08),
+  transparent
+  );
+
+  transition:.8s;
+}
+
+
+.subtitle:hover::before{
+  left:100%;
+}
+
+
+.subtitle:hover{
+
+  transform:translateY(-4px);
+
+  box-shadow:
+  0 20px 55px rgba(168,85,247,.18);
+
+}
+
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:40px;
+}
+
+
+.card{
+
+  background:rgba(15,23,42,.68);
+
+  backdrop-filter:blur(14px);
+
+  padding:35px;
+
+  border-radius:24px;
+
+  margin:30px 0;
+
+  border:1px solid rgba(255,255,255,.08);
+
+  opacity:0;
+
+  transform:translateY(40px);
+
+  animation:fadeUp 1s forwards;
+
+  transition:.4s;
+
+  box-shadow:
+  0 15px 40px rgba(0,0,0,.25);
+
+}
+
+
+.card:hover{
+
+  transform:translateY(-8px);
+
+  box-shadow:
+  0 25px 60px rgba(168,85,247,.18),
+  0 0 30px rgba(251,191,36,.08);
+
+}
+
+
+.card:nth-child(1){
+  animation-delay:.2s;
+}
+
+.card:nth-child(2){
+  animation-delay:.4s;
+}
+
+.card:nth-child(3){
+  animation-delay:.6s;
+}
+
+
+@keyframes fadeUp{
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+}
+
+.card h2{
+  color:#c084fc;
+  font-size:2rem;
+  margin-bottom:20px;
+}
+
+.card p{
+
+  color:#dbeafe;
+
+  line-height:1.9;
+
+  font-size:1rem;
+}
+
+.features{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(auto-fit,minmax(260px,1fr));
+
+  gap:20px;
+
+  margin-top:25px;
+}
+.feature{
+
+  background:
+  rgba(255,255,255,.04);
+
+  border:
+  1px solid rgba(255,255,255,.05);
+
+  padding:25px;
+
+  border-radius:18px;
+
+  transition:.35s;
+}
+
+
+.feature:hover{
+
+  transform:
+  translateY(-8px)
+  scale(1.02);
+
+  box-shadow:
+  0 15px 35px rgba(168,85,247,.18);
+
+  border-color:
+  rgba(192,132,252,.25);
+}
+
+
+.feature h3{
+
+  color:#fbbf24;
+
+  margin-bottom:15px;
+}
+
+
+.feature p{
+
+  color:#dbeafe;
+
+  line-height:1.7;
+}
+
+
+.button{
+
+  display:inline-block;
+
+  margin-top:20px;
+
+  padding:12px 24px;
+
+  border-radius:12px;
+
+  text-decoration:none;
+
+  color:white;
+
+  background:
+  linear-gradient(
+  135deg,
+  #7c3aed,
+  #3b82f6
+  );
+
+  transition:.35s;
+}
+
+
+.button:hover{
+
+  transform:translateY(-4px);
+
+  box-shadow:
+  0 15px 35px rgba(168,85,247,.35);
+
+}
+
+.back{
+
+  display:block;
+
+  width:fit-content;
+
+  margin:60px auto;
+
+  padding:14px 28px;
+
+  border-radius:14px;
+
+  text-decoration:none;
+
+  color:#a95ff9;
+
+  background:
+  linear-gradient(
+  135deg,
+  rgba(168,85,247,.18),
+  rgba(59,130,246,.18)
+  );
+
+  border:
+  1px solid rgba(255,255,255,.08);
+
+  transition:.35s;
+}
+
+
+.back:hover{
+
+  transform:translateY(-4px);
+
+  box-shadow:
+  0 15px 35px rgba(168,85,247,.25);
+
+  border-color:
+  rgba(192,132,252,.25);
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+
+ <img src="bandmate-logo.png" class="logo">
+
+  <h1>BandMate</h1>
+
+  <p class="subtitle">
+  Interactive training platform designed to help musicians improve performance, discipline, confidence, leadership, and audition preparation.
+  </p>
+
+</div>
+
+<div class="container">
+
+<div class="card">
+
+  <h2>Problem</h2>
+
+  <p>
+  Many students preparing for marching band auditions lack structured tools to improve technique, consistency, confidence, and mental preparation.
+  </p>
+
+</div>
+
+
+<div class="card">
+
+<h2>Why I Built BandMate</h2>
+
+<p>
+BandMate started as a personal challenge after seeing how demanding drum major auditions and music leadership preparation can be.
+</p>
+
+<p>
+Although I did not originally come from a music background, I dedicated time to learning how band systems, conducting preparation, and performance development worked in order to build a meaningful solution.
+</p>
+
+<p>
+This project represents my ability to adapt quickly, learn new industries, and create technology solutions even in areas outside my original experience.
+</p>
+
+</div>
+
+<div class="card">
+
+  <h2>Solution</h2>
+
+  <p>
+  BandMate is an interactive training platform designed to help musicians develop performance habits, improve technical skills, and prepare for competitive auditions through guided exercises and real-time feedback.
+  </p>
+
+</div>
+
+
+<div class="card">
+
+<h2>Development Stack</h2>
+
+<div class="tech-grid">
+
+<span>HTML</span>
+<span>React</span>
+<span>TypeScript</span>
+<span>Tailwind CSS</span>
+<span>Java</span>
+<span>Node.js</span>
+<span>Express</span>
+<span>PostgreSQL</span>
+<span>OpenAI API</span>
+<span>Framer Motion</span>
+
+</div>
+
+</div>
+
+<div class="card">
+
+  <h2>Vision</h2>
+
+  <p>
+  My vision is to create a platform that helps students grow both musically and mentally while giving them access to tools that make preparation more structured, accessible, and effective.
+  </p>
+
+  <a href="https://bandmate-pro.com/" target="_blank" class="button">
+    Launch Live App →
+  </a>
+
+</div>
+
+<div class="card">
+
+  <h2>Features</h2>
+
+  <div class="features">
+
+
+    <div class="feature">
+
+      <h3>Smart Metronome</h3>
+
+      <p>
+      Interactive metronome system designed to improve timing, rhythm accuracy, and consistency during practice sessions.
+      </p>
+
+    </div>
+
+
+    <div class="feature">
+
+      <h3>Enhanced Real-Time Analysis</h3>
+
+      <p>
+      Real-time performance tracking system focused on helping users monitor improvement and training consistency.
+      </p>
+
+    </div>
+
+
+    <div class="feature">
+
+      <h3>AI Performance Analysis</h3>
+
+      <p>
+      Upload practice recordings and receive AI-assisted feedback focused on technique, timing, and overall performance improvement.
+      </p>
+
+    </div>
+
+
+    <div class="feature">
+
+      <h3>Drum Major Training</h3>
+
+      <p>
+      Structured exercises, leadership preparation, conducting practice, and interview simulations designed for drum major auditions.
+      </p>
+
+    </div>
+
+
+    <div class="feature">
+
+      <h3>Percussion Packet Player</h3>
+
+      <p>
+      Practice audition packets with guided exercises and preparation tools designed to improve performance before auditions.
+      </p>
+
+    </div>
+
+
+    <div class="feature">
+
+      <h3>Mindset Training</h3>
+
+      <p>
+      Mental preparation exercises focused on discipline, confidence, consistency, and performance mindset development.
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
+
+<a href="projects.html" class="back">
+← Back
+</a>
+
+</div>
+
+
+
+</body>
+</html>

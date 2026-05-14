@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Projects</title>
+
+<style>
+
+body{
+  margin:0;
+  font-family:'Segoe UI',sans-serif;
+  color:white;
+  overflow-x:hidden;
+
+  background:
+  radial-gradient(circle at top left,#1d4ed8 0%,transparent 30%),
+  radial-gradient(circle at bottom right,#22c55e 0%,transparent 25%),
+  linear-gradient(135deg,#020617,#0f172a,#111827);
+
+  min-height:100vh;
+}
+
+
+
+
+.header{
+  text-align:center;
+  padding:80px 20px;
+  font-size:4rem;
+  font-weight:bold;
+
+  background:linear-gradient(90deg,#38bdf8,#22d3ee);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+
+  text-shadow:0 0 20px rgba(18, 104, 132, 0.984);
+
+  animation:fadeDown 1.5s ease forwards;
+}
+
+
+
+
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:20px;
+}
+
+
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(400px,1fr));
+  gap:30px;
+}
+
+
+
+.card{
+  position:relative;
+  overflow:hidden;
+
+  background:rgba(15,23,42,0.75);
+  backdrop-filter:blur(12px);
+
+  padding:30px;
+  border-radius:20px;
+
+  border:1px solid rgba(255,255,255,0.08);
+
+  transform:translateY(40px);
+  opacity:0;
+
+  animation:fadeUp 1s ease forwards;
+
+  transition:.4s;
+}
+
+
+
+
+.card::before{
+  content:'';
+
+  position:absolute;
+  top:-120%;
+  left:-120%;
+
+  width:220%;
+  height:220%;
+
+  background:linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.06),
+    transparent
+  );
+
+  transform:rotate(25deg);
+
+  transition:.9s;
+}
+
+.card:hover::before{
+  top:100%;
+  left:100%;
+}
+
+
+
+
+.card:nth-child(1){
+  animation-delay:.2s;
+}
+
+.card:nth-child(2){
+  animation-delay:.4s;
+}
+
+
+
+
+.card:hover{
+  transform:translateY(-10px) scale(1.02);
+}
+
+
+
+
+.tennvolt{
+  border:1px solid rgba(34,197,94,0.25);
+}
+
+.tennvolt:hover{
+  box-shadow:
+  0 20px 40px rgba(34,197,94,0.25),
+  0 0 30px rgba(34,211,238,0.2);
+}
+
+
+
+
+.bandmate{
+  border:1px solid rgba(251,146,60,0.25);
+}
+
+.bandmate:hover{
+  box-shadow:
+  0 20px 40px rgba(251,146,60,0.25),
+  0 0 30px rgba(59,130,246,0.2);
+}
+
+
+
+
+.card h2{
+  color:#38bdf8;
+  font-size:2rem;
+  margin-bottom:20px;
+}
+
+
+
+
+.card ul{
+  padding-left:25px;
+}
+
+.card li{
+  color:#e2e8f0;
+  line-height:1.7;
+  margin-bottom:20px;
+  font-size:1.05rem;
+}
+
+
+
+.buttons{
+  margin-top:20px;
+}
+
+.button{
+  display:inline-block;
+
+  padding:12px 24px;
+
+  border-radius:12px;
+  text-decoration:none;
+
+  color:white;
+  font-weight:600;
+
+  background:linear-gradient(
+    135deg,
+    #2563eb,
+    #38bdf8
+  );
+
+  transition:.3s;
+}
+
+.button:hover{
+  transform:translateY(-3px);
+
+  box-shadow:
+  0 10px 25px rgba(56,189,248,0.4);
+}
+
+
+
+.back{
+  display:block;
+
+  margin-top:50px;
+
+  text-align:center;
+
+  color:#38bdf8;
+  text-decoration:none;
+
+  font-size:1.1rem;
+
+  transition:.3s;
+}
+
+.back:hover{
+  color:white;
+}
+
+
+
+
+@keyframes fadeUp{
+
+  from{
+    opacity:0;
+    transform:translateY(40px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+}
+
+
+@keyframes fadeDown{
+
+  from{
+    opacity:0;
+    transform:translateY(-30px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+}
+
+
+
+
+@media(max-width:768px){
+
+  .header{
+    font-size:2.2rem;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<h1 class="header">
+Projects
+</h1>
+
+<div class="container">
+
+<div class="grid">
+
+
+
+
+<div class="card tennvolt">
+
+<h2>
+ TennVolt
+</h2>
+
+<ul>
+
+<li>
+TennVolt is an AI-powered tennis platform focused on player development, performance tracking, and community connection.
+</li>
+
+<li>
+Designed to help athletes analyze progress, connect with coaches, and improve through data-driven insights and AI tools.
+</li>
+
+<li>
+Built using Android Studio, Kotlin, APIs, backend systems, and database integration. Currently preparing for future mobile release.
+</li>
+
+</ul>
+
+<div class="buttons">
+
+<a href="tennvolt.html" class="button">
+View Project
+</a>
+
+</div>
+
+</div>
+
+
+
+
+<div class="card bandmate">
+
+<h2>
+BandMate
+</h2>
+
+<ul>
+
+<li>
+BandMate is a music leadership and training platform created to help drum majors improve confidence, discipline, conducting technique, and audition preparation.
+</li>
+
+<li>
+Focused on combining structured practice systems, performance development, and leadership growth into one interactive experience.
+</li>
+
+<li>
+Built with frontend technologies, backend systems, APIs, and future Java/C++ integrations for expanded functionality.
+</li>
+
+</ul>
+
+<div class="buttons">
+
+<a href="bandmate.html" class="button">
+View Project
+</a>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<a href="index.html" class="back">
+← Back
+</a>
+
+</div>
+
+</body>
+</html>

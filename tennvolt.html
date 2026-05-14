@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>TennVolt - Enrique Acevedo</title>
+
+<style>
+
+body{
+  margin:0;
+  font-family:'Segoe UI', sans-serif;
+  color:white;
+
+  background: linear-gradient(135deg,#020617,#0f172a,#022c22);
+  background-size: 300% 300%;
+  animation:bgMove 12s infinite alternate;
+}
+
+@keyframes bgMove{
+  0%{background-position:0% 50%;}
+  100%{background-position:100% 50%;}
+}
+
+.header{
+  text-align:center;
+  padding:110px 20px 70px;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.logo{
+  width:150px;
+
+  margin-bottom:40px;
+
+  filter:
+  drop-shadow(0 0 25px rgba(34,211,238,.25))
+  drop-shadow(0 0 45px rgba(34,197,94,.25));
+
+  animation:floatLogo 4s ease-in-out infinite;
+}
+@keyframes floatLogo{
+  0%{transform:translateY(0px);}
+  50%{transform:translateY(-12px);}
+  100%{transform:translateY(0px);}
+}
+
+.title{
+  font-size:6rem;
+  font-weight:900;
+  letter-spacing:3px;
+
+  line-height:1;
+
+  margin:0 0 35px;
+
+  display:inline-block;
+
+  background:linear-gradient(
+  90deg,
+  #f04a0d,
+  #4ade80,
+  #eab308,
+  #0d000006
+  );
+
+  background-size:300% auto;
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+
+  animation:titleGlow 6s linear infinite;
+
+  text-shadow:
+  0 0 25px rgba(34,211,238,.18);
+}
+
+@keyframes titleGlow{
+  0%{
+    background-position:0% center;
+  }
+
+  100%{
+    background-position:300% center;
+  }
+}
+
+
+.subtitle{
+  max-width:760px;
+
+  padding:20px 32px;
+
+  font-size:1.05rem;
+  line-height:1.8;
+  letter-spacing:.3px;
+
+  color:#e2e8f0;
+
+  position:relative;
+
+  background:
+  linear-gradient(
+  135deg,
+  rgba(15,23,42,.75),
+  rgba(15,23,42,.45)
+  );
+
+  border:
+  1px solid rgba(255,255,255,.08);
+
+  border-radius:20px;
+
+  backdrop-filter:blur(18px);
+
+  overflow:hidden;
+
+  box-shadow:
+  0 15px 45px rgba(0,0,0,.35);
+
+  transition:.4s;
+}
+
+.subtitle::before{
+  content:'';
+
+  position:absolute;
+
+  top:0;
+  left:-100%;
+
+  width:100%;
+  height:100%;
+
+  background:
+  linear-gradient(
+  90deg,
+  transparent,
+  rgba(255,255,255,.08),
+  transparent
+  );
+
+  transition:.8s;
+}
+.subtitle:hover{
+  transform:translateY(-4px);
+
+  border-color:
+  rgba(34,211,238,.18);
+
+  box-shadow:
+  0 20px 55px rgba(34,211,238,.12);
+}
+
+
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:60px 40px;
+}
+
+.card{
+  background:rgba(255,255,255,0.05);
+  padding:25px;
+  border-radius:15px;
+  margin-top:25px;
+
+  backdrop-filter:blur(10px);
+
+  opacity:0;
+  transform:translateY(30px);
+  animation:fadeUp 1s forwards;
+}
+
+.card:nth-child(2){animation-delay:.2s;}
+.card:nth-child(3){animation-delay:.4s;}
+.card:nth-child(4){animation-delay:.6s;}
+
+.card h2{
+  color:#22d3ee;
+}
+
+
+.features{
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+  margin-top:20px;
+}
+
+.feature{
+  flex:1;
+  min-width:250px;
+
+  background:rgba(255,255,255,0.05);
+  padding:20px;
+  border-radius:12px;
+
+  transition:0.3s;
+}
+
+.feature:hover{
+  transform:translateY(-10px);
+  box-shadow:0 10px 30px rgba(34,211,238,0.4);
+}
+
+
+.button{
+  display:inline-block;
+  margin-top:15px;
+  padding:10px 20px;
+
+  background:linear-gradient(90deg,#22d3ee,#4ade80);
+  color:black;
+
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:bold;
+
+  transition:0.3s;
+}
+
+.button:hover{
+  transform:scale(1.1);
+}
+
+
+.carousel{
+  margin-top:30px;
+  display:flex;
+  overflow-x:auto;
+  gap:15px;
+  scroll-snap-type:x mandatory;
+}
+
+.carousel img{
+  width:250px;
+  border-radius:12px;
+  scroll-snap-align:center;
+
+  transition:0.3s;
+}
+
+.carousel img:hover{
+  transform:scale(1.1);
+}
+
+
+@keyframes fadeUp{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+
+.back{
+  display:block;
+  text-align:center;
+  margin:40px;
+  color:#22d3ee;
+  text-decoration:none;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+
+ 
+ <img src="icon-512x512.png" class="logo">
+
+  <h1 class="title">TennVolt</h1>
+
+<p class="subtitle">
+An AI-powered platform designed to help players improve performance, strengthen mindset, and grow the tennis community.
+</p>
+</div>
+
+<div class="container">
+
+  <div class="card">
+    <h2>Problem</h2>
+    <p>
+    Tennis players lack a centralized system to track progress, analyze performance, a place where they can train their brain and connect with the right people and resources to become the best tennis player they can be inside and outside the court.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>Solution</h2>
+    <p>
+    TennVolt provides an AI-powered platform where users can track performance, improve their level, analyze their data, train their brain, habits and reactions but most importantly connect with coaches and players to make the tennis community even larger and conneceted than ever before.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>Features</h2>
+
+    <div class="features">
+      <div class="feature">
+         <h3>UTR Tracking</h3>
+        <p>Track your performance and progress and finda a plan to get your level to the next level..</p>
+      </div>
+      <br>
+
+      <div class="feature">
+         <h3>Social Network</h3>
+        <p>Connect with players and coaches by challenging, talking and training with all the tennis community and helping the players have all the resources at their disposal and for the community to extend.</p>
+      </div>
+      <br>
+
+      <div class="feature">
+         <h3>AI Training</h3>
+        <p>Get smart recommendations powered by AI just by posting a video of you training and with that they can give you a plan to improve yopur level.</p>
+      </div>
+    <br>
+
+    <div class="feature">
+      <h3>Doctor Mente/Mind</h3>
+      <p> A place where tennis players can talk to an AI agent where they can tell them any problem related to their mind, behavior or emotions during the match and the agent is going to find the best way to help them improve or relax depending on the situation.</p>
+    </div>
+    <br>
+
+
+    <div class="feature">
+      <h3>Psycology</h3>
+      <p> A section where a tennis player can find any issue related to the mind, behavior problems, etc and excersises where the player, the coach (anyone) can use to improve how they behave inside and outside the court because i believe that the mind is the most important thing in this world.</p>
+    </div>
+    <br>
+    
+
+    <div class="feature">
+      <h3>Match Scoring</h3>
+      <p> A section where people can post a live match for everyone to keep track of their resutls in real time, that means that anyone can see how you are doing in a tournament, practice match, etc, just by recording your voice or cliking a boton.</p>
+    </div>
+    <br>
+
+    <div class="feature">
+      <h3>Others</h3>
+      <p>There is so many other sections, however for me this are the most impresive or important inside my app. </p>
+    </div>
+    <br>
+
+  </div>
+
+  <div class="card">
+
+<h2>Development Stack</h2>
+
+<div class="tech-grid">
+
+<span>HTML</span>
+<span>CSS</span>
+<span>TypeScript</span>
+<span>React</span>
+<span>Tailwind CSS</span>
+<span>Java</span>
+<span>Kotlin</span>
+<span>Node.js</span>
+<span>Express</span>
+<span>PostgreSQL</span>
+<span>Firebase</span>
+<span>OpenAI API</span>
+<span>Google Cloud</span>
+<span>Stripe</span>
+<span>Android Studio</span>
+
+</div>
+
+<p class="release-text">
+Currently preparing TennVolt for future Google Play Store and App Store release.
+</p>
+
+</div>
+    <a href="https://tennvolt.co" target="_blank" class="button">
+      Live App
+    </a>
+
+</div>
+
+<a href="projects.html" class="back">← Back</a>
+
+</body>
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Future Projects</title>
+
+<style>
+body{
+  margin:0;
+  font-family:'Segoe UI',sans-serif;
+  color:white;
+
+  background:
+  radial-gradient(circle at top left,#0ea5e9 0%,transparent 25%),
+  radial-gradient(circle at bottom right,#22c55e 0%,transparent 20%),
+  radial-gradient(circle at center right,#fa4715 0%,transparent 15%),
+  linear-gradient(135deg,#020617,#0f172a,#111827);
+
+  background-attachment:fixed;
+
+  overflow-x:hidden;
+}
+
+.header{
+  text-align:center;
+
+  padding:120px 20px 80px;
+
+  position:relative;
+  overflow:hidden;
+}
+
+.header h1{
+  font-size:4.5rem;
+  font-weight:800;
+  letter-spacing:2px;
+
+  background:linear-gradient(
+    90deg,
+    #ed81dd,
+    #22c55e,
+    #facc15
+  );
+
+  background-size:300%;
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color: rgb(12, 137, 246);
+
+  animation:
+  titleGlow 6s linear infinite,
+  fadeDown 1.5s ease;
+
+  text-shadow:
+  0 0 25px rgba(56,189,248,0.3);
+}
+
+
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:40px;
+}
+
+
+.card{
+  background:rgba(15,23,42,0.7);
+
+  backdrop-filter:blur(14px);
+
+  padding:35px;
+
+  margin-top:30px;
+
+  border-radius:22px;
+
+  border:1px solid rgba(255,255,255,0.08);
+
+  opacity:0;
+
+  transform:translateY(40px);
+
+  animation:fadeIn 1s forwards;
+
+  transition:.4s;
+
+  position:relative;
+
+  overflow:hidden;
+}
+
+.card:nth-child(1){animation-delay:0.3s;}
+.card:nth-child(2){animation-delay:0.6s;}
+
+.card:hover{
+  transform:
+  translateY(-10px)
+  scale(1.01);
+
+  box-shadow:
+  0 20px 40px rgba(34,211,238,0.15),
+  0 0 30px rgba(34,197,94,0.12);
+}
+.card::before{
+  content:'';
+
+  position:absolute;
+
+  top:-100%;
+  left:-100%;
+
+  width:200%;
+  height:200%;
+
+  background:linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.05),
+    transparent
+  );
+
+  transform:rotate(25deg);
+
+  transition:.8s;
+}
+
+.card:hover::before{
+  top:100%;
+  left:100%;
+}
+
+.card h2{
+  font-size:2rem;
+
+  margin-bottom:20px;
+
+  background:linear-gradient(
+    90deg,
+    #38bdf8,
+    #22c55e
+  );
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.card p,
+.card li{
+  color:#e2e8f0;
+
+  line-height:1.8;
+
+  font-size:1.05rem;
+}
+
+.card ul{
+  padding-left:20px;
+}
+
+@keyframes fadeIn{
+  to{opacity:1; transform:translateY(0);}
+}
+
+
+a{
+  display:inline-block;
+
+  margin-top:35px;
+
+  color:#38bdf8;
+
+  text-decoration:none;
+
+  font-weight:600;
+
+  transition:.3s;
+}
+
+a:hover{
+  transform:translateX(-5px);
+
+  color:#22c55e;
+}
+
+@keyframes fadeDown{
+  from{
+    opacity:0;
+    transform:translateY(-40px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes titleGlow{
+  0%{
+    background-position:0%;
+  }
+
+  100%{
+    background-position:300%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+<h1>Future Projects</h1>
+</div>
+
+<div class="container">
+
+<div class="card">
+<h2>Smart Dog Collar</h2>
+
+<p><b>Vision:</b> Build an AI-powered smart collar designed to help pet owners monitor their dogs’ health, safety, and daily activity through intelligent technology and real-time tracking.</p>
+
+<p><b>Features:</b></p>
+<ul>
+<li>Real-time GPS tracking</li>
+
+<li>AI-powered health monitoring</li>
+
+<li>Sleep and activity analysis</li>
+
+<li>Smart alerts for unusual behavior</li>
+
+<li>Integrated camera support</li>
+
+<li>AI assistant for pet owners</li>
+
+<li>Community platform for dog owners</li>
+
+<li>Future veterinary AI integration</li>
+</ul>
+
+<p>
+<b>Technology Stack:</b>
+Python, Firebase, IoT systems, embedded hardware integration, AI technologies, database systems, and frontend development.
+</p>
+</div>
+
+<div class="card">
+<h2>Project Vision</h2>
+
+<p>
+My goal is to build impactful technology through AI and software engineering while creating solutions that improve people's lives and solve real-world problems.
+
+I want to contribute innovative ideas, develop meaningful products, and become a valuable long-term asset within a company environment. I am driven by creativity, problem-solving, and the ambition to create technology that can make a real difference both professionally and personally.
+</p>
+
+<p>
+My focus is to continuously grow as a developer, gain real-world experience, and become highly skilled in AI and software development.
+
+I am always willing to take on challenging projects, work under pressure, and push myself beyond my limits in order to improve and prove my value as both a developer and a teammate.
+</p>
+
+</div>
+
+<div class="card">
+  <h2>Long-Term Vision</h2>
+ <p>
+My long-term goal is to become a highly valuable software engineer capable of helping companies grow through innovation, dedication, and problem-solving.
+
+I aim to continuously improve my technical skills, contribute meaningful ideas, and remain loyal and committed to every team I become part of.
+
+Beyond building applications, I want to create technology that leaves a lasting impact while proving that hard work, creativity, and discipline can transform ideas into real-world solutions.
+</p>
+</div>
+
+
+
+<a href="index.html">← Back</a>
+
+</div>
+
+</body>
+</html>

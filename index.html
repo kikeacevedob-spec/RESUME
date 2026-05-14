@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Enrique Acevedo</title>
+
+<style>
+body{
+  margin:0;
+  font-family:'Segoe UI',sans-serif;
+  color:white;
+  overflow:hidden;
+
+  
+  background:linear-gradient(-45deg,#020617,#0f172a,#020617,#0ea5e9);
+  background-size:400% 400%;
+  animation:bgMove 12s ease infinite;
+}
+
+@keyframes bgMove{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+
+.hero{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+
+.profile-pic{
+  width:130px;
+  height:130px;
+  border-radius:50%;
+  border:2px solid #38bdf8;
+  object-fit:cover;
+  margin-bottom:20px;
+
+  box-shadow:0 0 25px rgba(56,189,248,0.6);
+}
+
+
+.hero h1{
+  font-size:3.2rem;
+  margin:10px 0;
+
+  background:linear-gradient(90deg,#38bdf8,#22d3ee,#60a5fa);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+
+  animation:glowText 2s ease-in-out infinite alternate;
+}
+
+@keyframes glowText{
+  from{
+    text-shadow:0 0 10px rgba(56,189,248,0.3);
+  }
+  to{
+    text-shadow:0 0 25px rgba(56,189,248,0.9);
+  }
+}
+
+.highlight{
+  margin:20px 0;
+  padding:15px 35px;
+  border-radius:12px;
+
+  background:#1e293b;
+  border:1px solid rgba(56,189,248,0.3);
+
+  box-shadow:0 0 15px rgba(56,189,248,0.2);
+
+  animation:fadeUp 1s ease forwards;
+}
+
+
+.highlight p{
+  font-size:1.1rem;
+  color:#cbd5f5;
+}
+
+
+.country{
+  margin-top:10px;
+  font-size:1.1rem;
+  color:#38bdf8;
+
+  opacity:0;
+  transform:translateY(10px);
+
+  animation:fadeUp 1s ease forwards;
+  animation-delay:.5s;
+
+  text-shadow:0 0 10px rgba(56,189,248,0.6);
+}
+
+
+.buttons{
+  display:flex;
+  gap:15px;
+  margin-top:25px;
+}
+
+
+.button{
+  padding:12px 25px;
+  border-radius:10px;
+  text-decoration:none;
+  color:white;
+
+  background:linear-gradient(135deg,#2563eb,#38bdf8);
+
+  transition:.3s;
+}
+
+.button:hover{
+  transform:translateY(-3px);
+  box-shadow:0 10px 25px rgba(56,189,248,0.5);
+}
+
+
+.linkedin{
+  margin-top:25px;
+  opacity:0;
+  animation:fadeUp 1s ease forwards;
+  animation-delay:1s;
+}
+
+.linkedin a{
+  color:#22d3ee;
+  text-decoration:none;
+}
+
+.linkedin a:hover{
+  text-decoration:underline;
+}
+
+
+@keyframes fadeUp{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+
+<img src="IMG_4852.jpeg" class="profile-pic">
+
+<h1>Enrique Acevedo</h1>
+
+<div class="highlight">
+  <p>Software Engineer | AI Developer</p>
+</div>
+
+<p class="country">Spain</p>
+
+<div class="buttons">
+  <a href="summary.html" class="button">Resume</a>
+  <a href="projects.html" class="button">Projects</a>
+  <a href="future.html" class="button">Future</a>
+</div>
+
+<div class="linkedin">
+  <a href="https://www.linkedin.com/in/enrique-acevedo-9ba581350/" target="_blank">
+    View my LinkedIn →
+  </a>
+</div>
+
+</div>
+
+</body>
+</html>
